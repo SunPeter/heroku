@@ -19,10 +19,11 @@ exports.route=function(app){
             } else {
                 var target_path = 'public/DFS/' + req.files[i].name;
                 fs.renameSync(req.files[i].path, target_path);
-                res.render('gm', {
-                    title: '文件处理',
-                    src:'DFS/' + req.files[i].name
-                });
+                res.sendfile('./public/DFS/' + req.files[i].name)
+//                res.render('gm', {
+//                    title: '文件处理',
+//                    src:'DFS/' + req.files[i].name
+//                });
             }
         }
     });
