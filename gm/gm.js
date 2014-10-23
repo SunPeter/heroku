@@ -9,14 +9,14 @@ var config={
     height:argv[4],
     destName:argv[5]
 }
-console.log(config);
 // resize and remove EXIF profile data
 gm('../public/'+config.sourceName)
     .resize(config.width,config.height,"!")
     .noProfile()
     .write('../public/'+config.destName, function (err) {
-        if (!err) console.log('done');
+        if (!err){
+
+        }
         else{
-            console.log(err);
         }
     });
